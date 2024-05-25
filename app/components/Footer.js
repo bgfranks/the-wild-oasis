@@ -1,7 +1,7 @@
 export default function Footer() {
   return (
-    <div>
+    <footer>
       <p>Copyright by The Wild Oasis 2024</p>
-    </div>
+    </footer>
   )
 }

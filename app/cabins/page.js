@@ -1,16 +1,11 @@
-import Counter from '../components/Counter'
+export const metadata = {
+  title: 'Cabins',
+}
 
-export default async function Page() {
-  const res = await fetch('https://jsonplaceholder.typicode.com/users')
-  const data = await res.json()
-
+export default function Page() {
   return (
     <div>
-      <h1>Cabin page</h1>
-      {data.map((user) => (
-        <li key={user.id}>{user.name}</li>
-      ))}
-      <Counter />
+      <h1>cabins page</h1>
     </div>
   )
 }

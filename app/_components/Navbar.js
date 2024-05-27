@@ -7,7 +7,7 @@ export default function Navbar() {
         <li>
           <Link
             href="/cabins"
-            className="hover:text-accent-400 transition-colors"
+            className="hover:text-accent-400 transition-colors duration-500 ease-in-out"
           >
             Cabins
           </Link>
@@ -15,7 +15,7 @@ export default function Navbar() {
         <li>
           <Link
             href="/about"
-            className="hover:text-accent-400 transition-colors"
+            className="hover:text-accent-400 transition-colors duration-500 ease-in-out"
           >
             About
           </Link>
@@ -23,7 +23,7 @@ export default function Navbar() {
         <li>
           <Link
             href="/account"
-            className="hover:text-accent-400 transition-colors"
+            className="hover:text-accent-400 transition-colors duration-500 ease-in-out"
           >
             Account
           </Link>

@@ -137,7 +137,7 @@ export async function getSettings() {
 export async function getCountries() {
   try {
     const res = await fetch(
-      `https://restfulcountries.com/api/v1/countries?apikey=${process.env.COUNTRY_API_KEY}`
+      'https://restcountries.com/v3.1/all?fields=name,flags'
     )
     const countries = await res.json()
     return countries

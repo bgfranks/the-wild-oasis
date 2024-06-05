@@ -17,6 +17,7 @@ function isAlreadyBooked(range, datesArr) {
 
 function DateSelector({ settings, bookingDates }) {
   const { range, setRange, resetRange } = useReservation()
+  const today = new Date()
 
   const handleSelectRange = (range) => {
     if (range === undefined) {
@@ -48,6 +49,7 @@ function DateSelector({ settings, bookingDates }) {
         numberOfMonths={2}
         selected={range}
         onSelect={handleSelectRange}
+        disabled={{ before: today }}
       />
 
       <div className="flex items-center justify-between px-8 bg-accent-500 text-primary-800 h-[72px]">

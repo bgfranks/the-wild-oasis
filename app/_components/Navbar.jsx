@@ -39,7 +39,7 @@ export default async function Navbar() {
             </Link>
           ) : (
             <Link
-              href="/account"
+              href="/login"
               className="hover:text-accent-400 transition-colors duration-500 ease-in-out"
             >
               Login

@@ -54,7 +54,7 @@ function UpdateProfileForm({ guest, children }) {
       </div>
 
       <div className="flex justify-end items-center gap-6">
-        <FormButton />
+        <FormButton buttonText="Profile" />
       </div>
     </form>
   )

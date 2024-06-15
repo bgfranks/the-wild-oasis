@@ -1,3 +1,4 @@
+import FormButton from '@/app/_components/FormButton'
 import { updateReservation } from '@/app/_lib/actions'
 import { getBooking, getCabin } from '@/app/_lib/data-service'
 
@@ -53,9 +54,7 @@ export default async function Page({ params }) {
 
         <div className="flex justify-end items-center gap-6">
           <input name="reservationId" value={reservationId} type="hidden" />
-          <button className="bg-accent-500 px-8 py-4 text-primary-800 font-semibold hover:bg-accent-600 transition-all disabled:cursor-not-allowed disabled:bg-gray-500 disabled:text-gray-300">
-            Update reservation
-          </button>
+          <FormButton buttonText="Reservation" />
         </div>
       </form>
     </div>

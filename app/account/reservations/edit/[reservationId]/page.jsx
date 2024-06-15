@@ -2,6 +2,14 @@ import FormButton from '@/app/_components/FormButton'
 import { updateReservation } from '@/app/_lib/actions'
 import { getBooking, getCabin } from '@/app/_lib/data-service'
 
+export async function generateMetadata({ params }) {
+  const { id } = await getBooking(params.reservationId)
+
+  return {
+    title: `Reservation ${id}`,
+  }
+}
+
 export default async function Page({ params }) {
   const {
     id: reservationId,

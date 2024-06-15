@@ -45,8 +45,14 @@ export async function updateReservation(formData) {
   const session = await auth()
   if (!session) throw new Error('You must be logged in')
 
+  const guestBookings = await getBookings(session.user.guestId)
+  const guestBookingsIds = guestBookings.map((booking) => booking.id)
+
+  if (!guestBookingsIds.includes(bookingId))
+    throw new Error('You are not allowed to edit this booking')
+
   const numGuests = formData.get('numGuests')
-  const observations = formData.get('observations')
+  const observations = formData.get('observations').slice(0, 1000)
   const reservationId = formData.get('reservationId')
 
   const updateData = { numGuests, observations }

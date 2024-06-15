@@ -45,15 +45,17 @@ export async function updateReservation(formData) {
   const session = await auth()
   if (!session) throw new Error('You must be logged in')
 
-  const guestBookings = await getBookings(session.user.guestId)
-  const guestBookingsIds = guestBookings.map((booking) => booking.id)
-
-  if (!guestBookingsIds.includes(bookingId))
-    throw new Error('You are not allowed to edit this booking')
-
   const numGuests = formData.get('numGuests')
   const observations = formData.get('observations').slice(0, 1000)
   const reservationId = formData.get('reservationId')
+
+  const guestBookings = await getBookings(session.user.guestId)
+  const guestBookingsIds = guestBookings.map((booking) => String(booking.id))
+
+  console.log(guestBookingsIds)
+
+  if (!guestBookingsIds.includes(reservationId))
+    throw new Error('You are not allowed to edit this booking')
 
   const updateData = { numGuests, observations }
 
@@ -68,6 +70,7 @@ export async function updateReservation(formData) {
   }
 
   revalidatePath('/account/reservations')
+  revalidatePath(`/account/reservations/${reservationId}`)
   redirect('/account/reservations')
 }
 

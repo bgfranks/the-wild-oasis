@@ -62,7 +62,7 @@ export default async function Page({ params }) {
 
         <div className="flex justify-end items-center gap-6">
           <input name="reservationId" value={reservationId} type="hidden" />
-          <FormButton buttonText="Reservation" />
+          <FormButton buttonText="Update Reservation" />
         </div>
       </form>
     </div>
